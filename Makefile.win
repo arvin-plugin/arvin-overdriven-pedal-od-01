@@ -1,0 +1,76 @@
+# Project: overdriven
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o DPF/distrho/src/DistrhoPlugin.o DPF/distrho/src/DistrhoPluginCarla.o DPF/distrho/src/DistrhoPluginCLAP.o DPF/distrho/src/DistrhoPluginJACK.o DPF/distrho/src/DistrhoPluginLADSPA+DSSI.o DPF/distrho/src/DistrhoPluginLV2.o DPF/distrho/src/DistrhoPluginLV2export.o DPF/distrho/src/DistrhoPluginStub.o DPF/distrho/src/DistrhoPluginVST2.o DPF/distrho/src/DistrhoPluginVST3.o DPF/distrho/src/DistrhoUI.o DPF/distrho/src/DistrhoUIDSSI.o DPF/distrho/src/DistrhoUILV2.o DPF/distrho/src/DistrhoUIStub.o DPF/distrho/src/DistrhoUIVST3.o DPF/distrho/src/DistrhoUtils.o
+LINKOBJ  = main.o DPF/distrho/src/DistrhoPlugin.o DPF/distrho/src/DistrhoPluginCarla.o DPF/distrho/src/DistrhoPluginCLAP.o DPF/distrho/src/DistrhoPluginJACK.o DPF/distrho/src/DistrhoPluginLADSPA+DSSI.o DPF/distrho/src/DistrhoPluginLV2.o DPF/distrho/src/DistrhoPluginLV2export.o DPF/distrho/src/DistrhoPluginStub.o DPF/distrho/src/DistrhoPluginVST2.o DPF/distrho/src/DistrhoPluginVST3.o DPF/distrho/src/DistrhoUI.o DPF/distrho/src/DistrhoUIDSSI.o DPF/distrho/src/DistrhoUILV2.o DPF/distrho/src/DistrhoUIStub.o DPF/distrho/src/DistrhoUIVST3.o DPF/distrho/src/DistrhoUtils.o
+LIBS     = -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32
+INCS     = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files/Dev-Cpp/MinGW64/include" -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = overdriven.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPlugin.o: DPF/distrho/src/DistrhoPlugin.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPlugin.cpp -o DPF/distrho/src/DistrhoPlugin.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPluginCarla.o: DPF/distrho/src/DistrhoPluginCarla.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPluginCarla.cpp -o DPF/distrho/src/DistrhoPluginCarla.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPluginCLAP.o: DPF/distrho/src/DistrhoPluginCLAP.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPluginCLAP.cpp -o DPF/distrho/src/DistrhoPluginCLAP.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPluginJACK.o: DPF/distrho/src/DistrhoPluginJACK.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPluginJACK.cpp -o DPF/distrho/src/DistrhoPluginJACK.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPluginLADSPA+DSSI.o: DPF/distrho/src/DistrhoPluginLADSPA+DSSI.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPluginLADSPA+DSSI.cpp -o DPF/distrho/src/DistrhoPluginLADSPA+DSSI.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPluginLV2.o: DPF/distrho/src/DistrhoPluginLV2.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPluginLV2.cpp -o DPF/distrho/src/DistrhoPluginLV2.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPluginLV2export.o: DPF/distrho/src/DistrhoPluginLV2export.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPluginLV2export.cpp -o DPF/distrho/src/DistrhoPluginLV2export.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPluginStub.o: DPF/distrho/src/DistrhoPluginStub.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPluginStub.cpp -o DPF/distrho/src/DistrhoPluginStub.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPluginVST2.o: DPF/distrho/src/DistrhoPluginVST2.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPluginVST2.cpp -o DPF/distrho/src/DistrhoPluginVST2.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoPluginVST3.o: DPF/distrho/src/DistrhoPluginVST3.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoPluginVST3.cpp -o DPF/distrho/src/DistrhoPluginVST3.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoUI.o: DPF/distrho/src/DistrhoUI.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoUI.cpp -o DPF/distrho/src/DistrhoUI.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoUIDSSI.o: DPF/distrho/src/DistrhoUIDSSI.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoUIDSSI.cpp -o DPF/distrho/src/DistrhoUIDSSI.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoUILV2.o: DPF/distrho/src/DistrhoUILV2.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoUILV2.cpp -o DPF/distrho/src/DistrhoUILV2.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoUIStub.o: DPF/distrho/src/DistrhoUIStub.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoUIStub.cpp -o DPF/distrho/src/DistrhoUIStub.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoUIVST3.o: DPF/distrho/src/DistrhoUIVST3.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoUIVST3.cpp -o DPF/distrho/src/DistrhoUIVST3.o $(CXXFLAGS)
+
+DPF/distrho/src/DistrhoUtils.o: DPF/distrho/src/DistrhoUtils.cpp
+	$(CPP) -c DPF/distrho/src/DistrhoUtils.cpp -o DPF/distrho/src/DistrhoUtils.o $(CXXFLAGS)
